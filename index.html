@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MI TIENDA</h1>
+        <div>
+            <label for="categorySelect">Categoría:</label>
+            <select id="categorySelect">
+                <option value="all">Todas</option>
+            </select>
+            <label for="priceSelect">Ordenar por precio:</label>
+            <select id="priceSelect">
+                <option value="asc">Ascendente</option>
+                <option value="desc">Descendente</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section id="containerProducts" class="products-grid"></section>
+        <aside id="cart">
+            <h2>Carrito</h2>
+            <ul id="cartItems"></ul>
+            <p>Total: <span id="totalPrice">$0.00</span></p>
+            <button id="clearCart">Vaciar Carrito</button>
+        </aside>
+    </main>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
