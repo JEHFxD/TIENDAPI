@@ -85,11 +85,11 @@ const addToCart = (product) => {
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartUI();
+    updateCart();
     updateCartCounter();
 };
 
-const updateCartUI = () => {
+const updateCart= () => {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cartItems.innerHTML = '';
     let totalPrice = 0;
@@ -137,7 +137,7 @@ const increaseQuantity = (productId) => {
         cartProduct.quantity += 1;
         cartProduct.totalPrice += cartProduct.price;
         localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartUI();
+        updateCart();
     }
 };
 
@@ -152,7 +152,7 @@ const decreaseQuantity = (productId) => {
             cart = cart.filter(p => p.id !== productId);
         }
         localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartUI();
+        updateCart();
     }
 };
 
@@ -160,12 +160,12 @@ const removeFromCart = (productId) => {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart = cart.filter(p => p.id !== productId);
     localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartUI();
+    updateCart();
 };
 
 const clearCart = () => {
     localStorage.removeItem('cart');
-    updateCartUI();
+    updateCart();
 };
 
 const filterProducts = () => {
